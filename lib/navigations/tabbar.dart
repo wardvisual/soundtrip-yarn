@@ -1,6 +1,6 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:spotify/views/home.dart';
 
 class Tabbar extends StatefulWidget {
@@ -11,10 +11,19 @@ class Tabbar extends StatefulWidget {
 }
 
 class _TabbarState extends State<Tabbar> {
+  int _selectedTab = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: const [
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedTab,
+        onTap: (index){
+          setState(() {
+            _selectedTab = index;
+          });
+        },
+        items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined), 
           label: "Home"),

@@ -53,11 +53,11 @@ class _TabbarState extends State<Tabbar> {
 
   Widget renderView(int tabIndex, Widget view) {
     return IgnorePointer(
-          ignoring: _selectedTab != tabIndex,
-          child: Opacity(
-            opacity: _selectedTab == tabIndex ? 1 : 0,
-            child: view
-          )
-        );
+      ignoring: _selectedTab != tabIndex,
+      child: Opacity(
+        opacity: _selectedTab == tabIndex ? 1 : 0,
+        child: view
+      )
+    );
   }
 }

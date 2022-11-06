@@ -1,6 +1,6 @@
 # SoundtripYarn?
 
-A Spotify-like music player
+"SoundtripYarn?" A Spotify-like and open-source music player
 
 ## Getting Started
 

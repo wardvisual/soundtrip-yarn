@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:spotify/views/home.dart';
+import 'package:spotify/views/library.dart';
+import 'package:spotify/views/profile.dart';
+import 'package:spotify/views/search.dart';
 
 class Tabbar extends StatefulWidget {
   const Tabbar({super.key});
@@ -25,7 +28,7 @@ class _TabbarState extends State<Tabbar> {
         },
         items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined), 
+          icon: Icon(Icons.home), 
           label: "Home"),
         BottomNavigationBarItem(
           icon: Icon(Icons.search_outlined), 
@@ -37,7 +40,24 @@ class _TabbarState extends State<Tabbar> {
           icon: Icon(Icons.person), 
           label: "Profile"),
       ]),
-      body: const HomeView(),
+      body: Stack(
+        children: [
+          renderView(0, HomeView()),
+          renderView(1, SearchView()),
+          renderView(2, LibraryView()),
+          renderView(3, ProfileView()),
+        ],
+      )
     );
+  }
+
+  Widget renderView(int tabIndex, Widget view) {
+    return IgnorePointer(
+          ignoring: _selectedTab != tabIndex,
+          child: Opacity(
+            opacity: _selectedTab == tabIndex ? 1 : 0,
+            child: view
+          )
+        );
   }
 }

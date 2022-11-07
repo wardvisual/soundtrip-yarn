@@ -1,6 +1,6 @@
 # SoundtripYarn?
 
-"SoundtripYarn?" A Spotify-like and open-source music player
+"SoundtripYarn?" A soundtrip_yarn-like and open-source music player
 
 ## Getting Started
 

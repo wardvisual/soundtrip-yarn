@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:spotify/navigations/tabbar.dart';
+import 'package:soundtrip_yarn/navigations/tabbar.dart';
 
 void main() {
   runApp(const MyApp());

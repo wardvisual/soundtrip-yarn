@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:spotify/views/home.dart';
-import 'package:spotify/views/library.dart';
-import 'package:spotify/views/profile.dart';
-import 'package:spotify/views/search.dart';
+import 'package:soundtrip_yarn/views/home.dart';
+import 'package:soundtrip_yarn/views/library.dart';
+import 'package:soundtrip_yarn/views/profile.dart';
+import 'package:soundtrip_yarn/views/search.dart';
 
 class Tabbar extends StatefulWidget {
   const Tabbar({super.key});

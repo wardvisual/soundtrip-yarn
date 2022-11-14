@@ -35,171 +35,173 @@ class _HomeViewState extends State<HomeView> {
         ),
         SingleChildScrollView(
             physics: BouncingScrollPhysics(),
-            child: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(height: 40),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Recently Played",
-                          style: Theme.of(context).textTheme.headline6,
-                        ),
-                        Row(
-                          children: [
-                            Icon(Icons.history),
-                            SizedBox(width: 20),
-                            Icon(Icons.settings),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: BouncingScrollPhysics(),
-                      padding: EdgeInsets.all(20),
+            child: Container(
+              child: SafeArea(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 40),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AlbumCard(
-                            label: "Beliver",
-                            image: AssetImage("assets/album1.jpg"),
+                          Text(
+                            "Recently Played",
+                            style: Theme.of(context).textTheme.headline6,
                           ),
-                          SizedBox(width: 16),
-                          AlbumCard(
-                            label: "Beliver",
-                            image: AssetImage("assets/album2.jpeg"),
-                          ),
-                          SizedBox(width: 16),
-                          AlbumCard(
-                            label: "Beliver",
-                            image: AssetImage("assets/album3.jpg"),
-                          ),
-                          SizedBox(width: 16),
-                          AlbumCard(
-                            label: "Beliver",
-                            image: AssetImage("assets/album4.jpeg"),
-                          ),
-                          SizedBox(width: 16),
-                          AlbumCard(
-                            label: "Beliver",
-                            image: AssetImage("assets/album5.jpg"),
-                          ),
-                          SizedBox(width: 16),
-                          AlbumCard(
-                            label: "Beliver",
-                            image: AssetImage("assets/album6.jpg"),
-                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.history),
+                              SizedBox(width: 20),
+                              Icon(Icons.settings),
+                            ],
+                          )
                         ],
                       ),
-                  ),
-                  SizedBox(height: 5,),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                    ),
+                    SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
+                        padding: EdgeInsets.all(20),
+                        child: Row(
+                          children: [
+                            AlbumCard(
+                              label: "Beliver",
+                              image: AssetImage("assets/album1.jpg"),
+                            ),
+                            SizedBox(width: 16),
+                            AlbumCard(
+                              label: "Beliver",
+                              image: AssetImage("assets/album2.jpeg"),
+                            ),
+                            SizedBox(width: 16),
+                            AlbumCard(
+                              label: "Beliver",
+                              image: AssetImage("assets/album3.jpg"),
+                            ),
+                            SizedBox(width: 16),
+                            AlbumCard(
+                              label: "Beliver",
+                              image: AssetImage("assets/album4.jpeg"),
+                            ),
+                            SizedBox(width: 16),
+                            AlbumCard(
+                              label: "Beliver",
+                              image: AssetImage("assets/album5.jpg"),
+                            ),
+                            SizedBox(width: 16),
+                            AlbumCard(
+                              label: "Beliver",
+                              image: AssetImage("assets/album6.jpg"),
+                            ),
+                          ],
+                        ),
+                    ),
+                    SizedBox(height: 5,),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            "Good morning!", 
+                            style: Theme.of(context).textTheme.headline6,  
+                          ),
+                          SizedBox(height: 16,),
+                          Row(
+                            children: [
+                              RowAlbumCard(image: AssetImage("assets/album1.jpg"), label: "Top 50 Global",),
+                              SizedBox(width: 10,),
+                              RowAlbumCard(image: AssetImage("assets/album2.jpeg"), label: "Best Mode",),
+                            ],
+                          ),
+                          SizedBox(height: 10,),
+                          Row(
+                            children: [
+                              RowAlbumCard(image: AssetImage("assets/album3.jpg"), label: "Lany World",),
+                              SizedBox(width: 10,),
+                              RowAlbumCard(image: AssetImage("assets/album4.jpeg"), label: "Coding Postcast",),
+                            ],
+                          ),
+                          SizedBox(height: 10,),
+                          Row(
+                            children: [
+                              RowAlbumCard(image: AssetImage("assets/album5.jpg"), label: "Jeremy Zucker",),
+                              SizedBox(width: 10,),
+                              RowAlbumCard(image: AssetImage("assets/album6.jpg"), label: "Top Hits",),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Good morning!", 
-                          style: Theme.of(context).textTheme.headline6,  
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            "Based on your recent",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
                         ),
-                        SizedBox(height: 16,),
-                        Row(
-                          children: [
-                            RowAlbumCard(image: AssetImage("assets/album1.jpg"), label: "Top 50 Global",),
-                            SizedBox(width: 10,),
-                            RowAlbumCard(image: AssetImage("assets/album2.jpeg"), label: "Best Mode",),
-                          ],
-                        ),
-                        SizedBox(height: 10,),
-                        Row(
-                          children: [
-                            RowAlbumCard(image: AssetImage("assets/album3.jpg"), label: "Lany World",),
-                            SizedBox(width: 10,),
-                            RowAlbumCard(image: AssetImage("assets/album4.jpeg"), label: "Coding Postcast",),
-                          ],
-                        ),
-                        SizedBox(height: 10,),
-                        Row(
-                          children: [
-                            RowAlbumCard(image: AssetImage("assets/album5.jpg"), label: "Jeremy Zucker",),
-                            SizedBox(width: 10,),
-                            RowAlbumCard(image: AssetImage("assets/album6.jpg"), label: "Top Hits",),
-                          ],
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          physics: BouncingScrollPhysics(),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            children: [
+                              SongCard(image: AssetImage("assets/album1.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album2.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album3.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album4.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album5.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                            ],
+                          )
                         )
                       ],
                     ),
-                  ),
 
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Text(
-                          "Based on your recent",
-                          style: Theme.of(context).textTheme.headline6,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text(
+                            "Recommended playlist",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
                         ),
-                      ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          children: [
-                            SongCard(image: AssetImage("assets/album1.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album2.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album3.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album4.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album5.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                          ],
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          physics: BouncingScrollPhysics(),
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Row(
+                            children: [
+                              SongCard(image: AssetImage("assets/album5.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album4.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album6.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album2.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                              SizedBox(width: 15,),
+                              SongCard(image: AssetImage("assets/album1.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
+                            ],
+                          )
                         )
-                      )
-                    ],
-                  ),
-
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Text(
-                          "Best of",
-                          style: Theme.of(context).textTheme.headline6,
-                        ),
-                      ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        physics: BouncingScrollPhysics(),
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Row(
-                          children: [
-                            SongCard(image: AssetImage("assets/album5.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album4.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album6.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album2.jpeg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                            SizedBox(width: 15,),
-                            SongCard(image: AssetImage("assets/album1.jpg"), label: "Justin Bieber, Jeremy Zucker, Ed Sheeran, Lany, ..",),
-                          ],
-                        )
-                      )
-                    ],
-                  ),
+                      ],
+                    ),
 
 
-                ],
+                  ],
+                ),
               ),
             ))
       ],
